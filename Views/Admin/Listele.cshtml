@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Randevu_Sistemi.Models.Doktor>
+@addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "View";
+}
+
+<p>
+    <a asp-action="Index">Doktor Ekle</a>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DoktorID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoktorAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoktorSoyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aktiflik)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DoktorID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DoktorAd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DoktorSoyad)
+                </td>
+                <td>
+                    @if (item.Aktiflik == true)
+                    {
+                        <form asp-controller="Admin" asp-action="PasifYap" asp-route-id="@item.DoktorID" asp-route-ad="@item.DoktorAd" asp-route-soyad="@item.DoktorSoyad" asp-route-sifre="@item.DoktorSifre" method="post">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="@item.Aktiflik" /> @Html.DisplayNameFor(model => model.Aktiflik)
+                            </label>
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </form>
+                    }
+                    else
+                    {
+                        <!--<button asp-action="AktifYap" asp-controller="Admin">Aktif Yap</button>-->
+                        <form asp-controller="Admin" asp-action="AktifYap" asp-route-id="@item.DoktorID" asp-route-ad="@item.DoktorAd" asp-route-soyad="@item.DoktorSoyad" asp-route-sifre="@item.DoktorSifre" method="post">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="@item.Aktiflik" /> @Html.DisplayNameFor(model => model.Aktiflik)
+                            </label>
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,117 @@
+<head>
+    <title>Randevular</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="../css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header" style="background-color: #ffffff;" class="mb-3">
+                <div class="inner">
+                    
+                    <!-- Logo -->
+                        <a asp-controller="Home" asp-action="Index" class="logo">
+                            
+                                <span class="fa fa-stethoscope"></span> <span class="title">SAKARYA ÜNİVERSİTESİ EĞİTİM ARAŞTIRMA HASTANESİ</span>
+                                
+                            </a>
+                    <div class="deneme" style="float:right;margin-top: -15;">
+                      <div class="row d-flex justify-content-center align-items-left mt-3 pl-1" >
+                        <div>
+                          <i class="fa fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                            <a asp-controller="Hasta" asp-action="GirisYap"><button  class="btn btn-xs" style="height: 40px;margin-right: 5px;">Giriş Yap</button></a>
+                            <a asp-controller="Hasta" asp-action="KayitOl"><button  class="btn btn-xs" style="height: 40px;">Kayıt Ol</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>    
+
+                    <!-- Nav -->
+                        <nav>
+                            <ul>
+                                <li><a href="#menu">Menu</a></li>
+                            </ul>
+                        </nav>
+
+                </div>
+            </header>   
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index" class="active">Anasayfa</a></li>
+
+                <li><a asp-controller="Home" asp-action="About">Hakkımızda</a></li>
+
+                <li><a asp-controller="Home" asp-action="Contact">İletişim</a></li>
+
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <table class="table inner">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Doktor Adı</th>
+                        <th scope="col">Tarih</th>
+                        <th scope="col">Saat</th>
+                        <th scope="col">#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i <ViewBag.Randevu.Length; i++)
+                    {
+                        <tr>
+                        <th scope="row">@(i+1)</th>
+                        <td>@ViewBag.Randevu[i].DoktorAd</td>
+                        <td>@ViewBag.Randevu[i].Tarih</td>
+                        <td>@ViewBag.Randevu[i].RandevuSaati</td>
+                        <td><button class="reset-this btn btn-secondary" style="padding-left: .5em;padding-right: .5em;">İptal Et</button></td>
+                    </tr>
+                    }
+                    
+                    
+                </tbody>
+            </table>
+
+        </div>
+
+        <footer id="footer">
+            <div class="inner">
+                <section>
+                    <ul class="icons">
+                        <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    </ul>
+
+                    &nbsp;
+                </section>
+
+                <ul class="copyright">
+                    <li>Copyright © 2020 Company Name </li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.scrolly.min.js"></script>
+    <script src="../js/jquery.scrollex.min.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>

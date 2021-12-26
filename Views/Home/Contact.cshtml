@@ -1,0 +1,134 @@
+<head>
+	<title>İletişim</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/main.css"/>
+	<noscript><link rel="stylesheet" href="../css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+                <header id="header" style="background-color: #ffffff;" class="mb-3">
+                <div class="inner">
+                    
+                    <!-- Logo -->
+                        <a asp-controller="Home" asp-action="Index" class="logo">
+                            
+                                <span class="fa fa-stethoscope"></span> <span class="title">SAKARYA ÜNİVERSİTESİ EĞİTİM ARAŞTIRMA HASTANESİ</span>
+                                
+                            </a>
+                    <div class="deneme" style="float:right;margin-top: -15;">
+                      <div class="row d-flex justify-content-center align-items-left mt-3 pl-1" >
+                        <div>
+                          <i class="fa fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                            <a asp-controller="Hasta" asp-action="GirisYap"><button  class="btn btn-xs" style="height: 40px;margin-right: 5px;">Giriş Yap</button></a>
+                            <a asp-controller="Hasta" asp-action="KayitOl"><button  class="btn btn-xs" style="height: 40px;">Kayıt Ol</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>    
+
+                    <!-- Nav -->
+                        <nav>
+                            <ul>
+                                <li><a href="#menu">Menu</a></li>
+                            </ul>
+                        </nav>
+
+                </div>
+            </header>
+
+            <!-- Menu -->
+                 <nav id="menu">
+					<h2>Menu</h2>
+					<ul>
+						<li><a asp-controller="Home" asp-action="Index" >Anasayfa</a></li>
+
+						<li><a asp-controller="Home" asp-action="About" >Hakkımızda</a></li>
+
+						<li><a asp-controller="Home" asp-action="Contact" class="active">İletişim</a></li>
+
+					</ul>
+				</nav>
+
+            <!-- Main -->
+                <div id="main">
+                    <div class="inner">
+                        <h1>İletişim</h1>
+                        <span class="image main"><img src="../images/map.jpg" alt="" /></span>
+                        
+                    </div>
+                </div>
+
+            <!-- Footer -->
+                <footer id="footer">
+                    <div class="inner">
+                        <section>
+                            <h2>BİZİMLE İLETİŞİME GEÇİN</h2>
+                            <form method="post" action="#">
+                                <div class="fields">
+                                    <div class="field half">
+                                        <input type="text" name="name" id="name" placeholder="Ad" />
+                                    </div>
+
+                                    <div class="field half">
+                                        <input type="text" name="email" id="email" placeholder="Email" />
+                                    </div>
+
+                                    <div class="field">
+                                        <input type="text" name="subject" id="subject" placeholder="konu" />
+                                    </div>
+
+                                    <div class="field">
+                                        <textarea name="message" id="message" rows="3" placeholder="Açıklama"></textarea>
+                                    </div>
+
+                                    <div class="field text-right">
+                                        <label>&nbsp;</label>
+
+                                        <ul class="actions">
+                                            <li><input type="submit" value="Mesaj Gönder " class="primary" /></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                        <section>
+                            <h2>İLETİŞİM BİLGİLERİ</h2>
+
+                            <ul class="alt">
+                                <li><span class="fa fa-envelope-o"></span> <a href="#">sakarya.universitesi@gmail.com</a></li>
+                                <li><span class="fa fa-phone"></span> 0555 555 55 55 </li>
+                                <li><span class="fa fa-map-pin"></span> Sakarya Üniversitesi Bilgisayar ve Bilişim Bilimleri Fakültesi, 54187 Sakarya</li>
+                            </ul>
+
+                            <h2>BİZİ TAKİP EDİN</h2>
+
+                            <ul class="icons">
+                                <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="https://www.instagram.com/bur.aksu/" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                                <li><a href="https://www.linkedin.com/in/burak-aksu-9b5a4b202/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                            </ul>
+                        </section>
+
+                        <ul class="copyright">
+                            <li>Copyright © 2020 Company Name </li>
+                        </ul>
+                    </div>
+                </footer>
+
+        </div>
+
+    <!-- Scripts -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../js/jquery.scrolly.min.js"></script>
+        <script src="../js/jquery.scrollex.min.js"></script>
+        <script src="../js/main.js"></script>
+
+</body>

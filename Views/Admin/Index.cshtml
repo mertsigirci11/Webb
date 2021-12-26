@@ -1,0 +1,133 @@
+﻿@addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model Randevu_Sistemi.Models.Doktor
+
+
+
+<head>
+	<title>Admin Girişi</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/main.css"/>
+	<noscript><link rel="stylesheet" href="../css/noscript.css" /></noscript>
+</head>
+<body class="is-preload" style="background-color: #e8dede;">
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+          <header id="header" style="background-color: #ffffff;" class="mb-3">
+                <div class="inner">
+                    
+                    <!-- Logo -->
+                        <a asp-controller="Home" asp-action="Index" class="logo">
+                            
+                                <span class="fa fa-stethoscope"></span> <span class="title">SAKARYA ÜNİVERSİTESİ EĞİTİM ARAŞTIRMA HASTANESİ</span>
+                                
+                            </a>
+                    <div class="deneme" style="float:right;margin-top: -15;">
+                      <div class="row d-flex justify-content-center align-items-left mt-3 pl-1" >
+                        <div>
+                          <i class="fa fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                            <a asp-controller="Hasta" asp-action="GirisYap"><button  class="btn btn-xs" style="height: 40px;margin-right: 5px;">Giriş Yap</button></a>
+                            <a asp-controller="Hasta" asp-action="KayitOl"><button  class="btn btn-xs" style="height: 40px;">Kayıt Ol</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>    
+
+                    <!-- Nav -->
+                        <nav>
+                            <ul>
+                                <li><a href="#menu">Menu</a></li>
+                            </ul>
+                        </nav>
+
+                </div>
+            </header>   
+        <!-- Menu -->
+            <nav id="menu">
+					<h2>Menu</h2>
+					<ul>
+						<li><a asp-controller="Home" asp-action="Index" >Anasayfa</a></li>
+
+						<li><a asp-controller="Home" asp-action="About">Hakkımızda</a></li>
+
+						<li><a asp-controller="Home" asp-action="Contact">İletişim</a></li>
+
+						
+					</ul>
+				</nav>
+
+            <!-- Main -->
+            <div id="main" style="height: 800;">
+                
+                <section class="vh-100" style="background-color: #e8dede;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100 " >
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Doktor Ekle</p>
+                
+                <form asp-controller="Admin" asp-action="Index" method="post">
+                <input type="text" asp-for="DoktorAd" placeholder="Doktor Ad"  />
+                <br />
+                <span asp-validation-for="DoktorAd"></span>
+                <br />
+                <input type="text" asp-for="DoktorSoyad" placeholder="Doktor Soyad" />
+                <br />
+                <span asp-validation-for="DoktorSoyad"></span>
+                <br />
+                <input type="text" asp-for="DoktorSifre" placeholder="Doktor Şifre" />
+                <br />
+                <span asp-validation-for="DoktorSifre"></span>
+                <br />
+                <button>Kaydet</button>
+            </form>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer id="footer">
+                    <div class="inner">
+                        <section>
+                            <ul class="icons">
+                                <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                                <li><a href="#" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                            </ul>
+
+                            &nbsp;
+                        </section>
+
+                        <ul class="copyright">
+                            <li>Copyright © 2020 Company Name </li>
+                        </ul>
+                    </div>
+                </footer>
+            
+    <!-- Scripts -->
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.bundle.min.js"></script>
+		<script src="../js/jquery.scrolly.min.js"></script>
+		<script src="../js/jquery.scrollex.min.js"></script>
+		<script src="../js/main.js"></script>
+</body>
+                    
+
+
